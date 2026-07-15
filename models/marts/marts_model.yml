@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "Core customer dimension table with calculated age cohorts."
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_sessions
+    description: "Core session engagement fact table."
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              arguments: 
+                to: ref('dim_users')
+                field: user_id
+
+  - name: fct_events
+    description: "Core clickstream event log fact table."
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              arguments: 
+                to: ref('dim_users')
+                field: user_id
+
+  - name: fct_transactions
+    description: "Core financial revenue fact table."
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              arguments: 
+                to: ref('dim_users')
+                field: user_id
+
+  - name: fct_looker_user_daily_obt
+    description: "Denormalized One-Big-Table at the user-day grain optimized for Looker Studio."
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: activity_date
+        tests:
+          - not_null
