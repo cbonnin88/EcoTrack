@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ecotrack_raw_data
+    database: product-analytics-494706
+    schema: ecotrack_raw
+    tables:
+      - name: users
+      - name: sessions
+      - name: events
+      - name: transactions

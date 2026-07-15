@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: 'Cleaned demographic details for EcoTrack users.'
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: subscription_tier
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['free','basic','premium']
+  
+  - name: stg_sessions
+    description: 'Standardized user sessions with pre-calculated duration in minutes.'
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+  
+  - name: stg_events
+    description: 'Standardized clickstream event tracking logs.'
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['open_app','view_dashboard','log_habit','join_challenge','read_article','share_milestone','view_upgrade_screen','purchase']
+  
+  - name: stg_transactions
+    description: 'Standardized financial ledger records in Euros (€).'
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: revenue_category
+        tests:
+          - accepted_values:
+              arguments:
+                 values: ['recurring','one_time']
+          
+          
