@@ -37,7 +37,7 @@ This project follows a structured data engineering and product analytics workflo
 
 ---
 
-### Phase 0: Synthetic Data Generation & Automated Ingestion
+### Phase 0: [Synthetic Data Generation & Automated Ingestion](EcoTrack_data_generation.ipynb)
 To simulate a realistic consumer ClimateTech app without privacy risks, we developed a Python data generator using the `pandas` and `Faker` libraries (`data_generation/generate_ecotrack_data.py`).
 
 * **Data Scale & Demographics:** Simulated **25,000 unique users** distributed across six Western European countries (France, Germany, Netherlands, Belgium, Spain, and Italy) with realistic age (18–70) and gender distributions.
