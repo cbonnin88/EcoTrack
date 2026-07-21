@@ -1,11 +1,5 @@
 # 🌍 EcoTrack: Western Europe Product & Monetization Pulse
 
-An end-to-end Analytics Engineering and Product Data Analysis project simulating a consumer ClimateTech mobile application. This repository demonstrates a modern data stack pipeline—from synthetic data generation and automated cloud ingestion to dbt data modeling, advanced BigQuery SQL analytics, and Looker Studio business intelligence.
-
----
-
-## 🚀 Project Overview
-
 **EcoTrack** is a mock ClimateTech mobile application operating across six Western European markets: **France, Germany, Netherlands, Belgium, Spain, and Italy**. The app helps users track daily eco-friendly habits, participate in sustainability challenges, and offset their carbon footprint through in-app purchases and subscription tiers (`Free`, `Basic`, and `Premium`).
 
 This project answers critical product and business questions:
