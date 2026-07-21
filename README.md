@@ -46,7 +46,7 @@ To simulate a realistic consumer ClimateTech app without privacy risks, we devel
   * `sessions.csv`: Mobile app login sessions with randomized durations (2–20 minutes) scaled to user tiers.
   * `events.csv`: Granular clickstream product tracking logs (`open_app`, `log_habit`, `join_challenge`, `share_milestone`, etc.).
   * `transactions.csv`: Financial ledger tracking recurring subscription revenue and one-time e-commerce purchases (carbon offsets and eco-merchandise) in Euros (€).
-* **Automated ELT Pipeline:** Uploaded raw CSVs to Google Cloud Storage (GCS) in the `europe-west1` (Belgium) region. Configured a **Fivetran** automated ingestion pipeline to stream these files directly into a Google BigQuery `raw_data` dataset.
+* **Automated ELT Pipeline:** Uploaded raw CSVs to Google Cloud Storage (GCS) in the `europe-west9` (Paris) region. Configured a **Fivetran** automated ingestion pipeline to stream these files directly into a Google BigQuery `raw_data` dataset.
 
 ---
 
