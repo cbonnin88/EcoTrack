@@ -63,6 +63,9 @@ We used **dbt Cloud** to transform raw, unindexed data into structured, tested a
   * Built traditional star-schema models (`dim_users`, `fct_sessions`, `fct_events`, `fct_transactions`).
   * **Architectural Decision (One-Big-Table):** To optimize Looker Studio performance and minimize BigQuery cloud query costs, we built an aggregated One-Big-Table (`fct_looker_user_daily_obt`) at the **user-day grain**. This model pre-calculates heavy rolling aggregations in dbt, eliminating runtime `JOIN` latency and metric fan-out in the BI layer.
 
+<img width="966" height="620" alt="Capture d’écran 2026-07-15 à 13 29 56" src="https://github.com/user-attachments/assets/d7a947fa-a9fd-4a4e-b356-8531d901f572" />
+
+
 ---
 
 ### Phase 2: [Product Exploratory Data Analysis (BigQuery SQL)](ecotrack_queries)
